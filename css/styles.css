@@ -39,7 +39,11 @@ html {
 #contact,
 #food,
 #mocktails {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
+}
+
+.section-title {
+  scroll-margin-top: 120px;
 }
 
 body {
@@ -167,7 +171,7 @@ a:hover {
 /* ========== Main content ========== */
 main {
   min-height: 100vh;
-  padding-top: 80px;
+  padding-top: 120px;
 }
 
 .container {
@@ -251,13 +255,15 @@ main {
 
 /* ========== Hero (Home) – Spectacular ========== */
 .hero {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 120px);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
   overflow: hidden;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .hero-parallax {
@@ -288,6 +294,7 @@ main {
   position: relative;
   z-index: 2;
   max-width: 900px;
+  padding-top: 2.5rem;
   animation: heroIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -814,9 +821,9 @@ a.highlight-card { text-decoration: none; }
 
 .floating-book .btn {
   border-radius: 50px;
-  padding: 1.25rem 2.5rem;
-  font-size: 0.9rem;
-  box-shadow: 0 10px 40px rgba(255, 49, 85, 0.4);
+  padding: 0.65rem 1.5rem;
+  font-size: 0.8rem;
+  box-shadow: 0 8px 28px rgba(255, 49, 85, 0.4);
 }
 
 /* ========== Footer ========== */
@@ -829,18 +836,91 @@ a.highlight-card { text-decoration: none; }
 
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
-  .container { padding: 0 1.5rem; }
-  .nav-inner { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
-  .logo img { height: 38px; max-width: 140px; }
-  .logo { padding-top: 4px; }
-  .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; }
-  .hero h1, .hero-title { font-size: 3rem; }
-  .hero-parallax { background-attachment: scroll; }
-  .hero-word { font-size: 0.9em; }
-  .map-wrap { height: 400px; }
-  .contact-info { grid-template-columns: 1fr; }
-  .date-row { grid-template-columns: 1fr; }
-  .highlights-home .highlight-card { min-width: 160px; padding: 1.75rem 1.5rem; }
+  .container { padding: 0 1rem; }
+  
+  /* FORCE COMPACT HEADER */
+  .site-header {
+    height: auto !important;
+    min-height: unset !important;
+  }
+  
+  .site-header .nav-inner {
+    flex-direction: column !important;
+    padding: 0.5rem !important;
+    gap: 0.25rem !important;
+  }
+  
+  .site-header .logo {
+    padding: 0 !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .site-header .logo img {
+    height: 24px !important;
+    max-width: 90px !important;
+  }
+  
+  /* Horizontal scroll for nav links – keeps height fixed */
+  .site-header .nav-links {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding: 0.25rem 0 !important;
+    gap: 0.5rem !important;
+    scrollbar-width: none; /* Hide scrollbar for clean look */
+  }
+  
+  .site-header .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .site-header .nav-links a {
+    flex: 0 0 auto !important;
+    font-size: 0.65rem !important;
+    padding: 0.3rem 0.6rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Play. Eat. Chill. starts AFTER the dropdown – never covered */
+  main { padding-top: 180px !important; }
+  .hero { min-height: calc(100vh - 180px) !important; padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+  .hero-content { padding-top: 1.5rem !important; margin-top: 0 !important; }
+  
+  /* Hero text very visible and clear */
+  .hero-title { 
+    font-size: 2.2rem !important; 
+    line-height: 1.1 !important;
+    margin-bottom: 1rem !important;
+    text-shadow: 0 0 20px rgba(0,0,0,1), 0 2px 5px rgba(0,0,0,1) !important; 
+  }
+  .hero .hero-word { 
+    transform: none !important;
+    opacity: 1 !important;
+    text-shadow: 0 0 20px rgba(0,0,0,1), 0 2px 5px rgba(0,0,0,1) !important; 
+  }
+  .hero-tagline {
+    font-size: 0.95rem !important;
+    color: #fff !important;
+    text-shadow: 0 0 15px rgba(0,0,0,1), 0 1px 4px rgba(0,0,0,1) !important;
+    font-weight: 600 !important;
+    margin-bottom: 2rem !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  .hero-buttons { margin-bottom: 2rem !important; gap: 1rem !important; }
+  .btn-hero-cta { padding: 0.8rem 1.2rem !important; font-size: 0.75rem !important; }
+
+  #gallery, #about, #contact, #food, #mocktails { scroll-margin-top: 180px !important; }
+  .section-title { scroll-margin-top: 180px !important; }
+  .hero-parallax { background-attachment: scroll !important; }
+  .map-wrap { height: 350px !important; }
+  .contact-info { grid-template-columns: 1fr !important; }
+  .highlights-home .highlight-card { min-width: 140px !important; padding: 1.5rem 1rem !important; }
 }
 
 /* Scroll-reveal targets */
