@@ -42,17 +42,15 @@ echo [3/5] Creating commit...
 echo.
 echo [4/5] Adding GitHub remote...
 "%GIT_CMD%" remote remove origin 2>nul
-"%GIT_CMD%" remote add origin https://github.com/sakshamtikekar19/gamers-hideout.git
+"%GIT_CMD%" remote add origin https://sakshamtikekar19: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@github.com/sakshamtikekar19/gamers-hideout.git
 "%GIT_CMD%" branch -M main
 
 echo.
 echo [5/5] Pushing to GitHub...
-echo.
-echo When prompted for password, use your Personal Access Token:
-echo Token: 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
-echo.
 
 "%GIT_CMD%" push -u origin main --force
+
+"%GIT_CMD%" remote set-url origin https://github.com/sakshamtikekar19/gamers-hideout.git
 
 echo.
 echo ========================================
