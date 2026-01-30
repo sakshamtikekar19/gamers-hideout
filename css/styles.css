@@ -86,7 +86,8 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(7, 7, 8, 0.8);
+  background: rgba(7, 7, 8, 0.9);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
 }
@@ -860,17 +861,19 @@ a.highlight-card { text-decoration: none; }
     max-width: 90px !important;
   }
   
-  /* Horizontal scroll for nav links – keeps height fixed */
+  /* Horizontal scroll for nav links – Opera/Chrome/Safari compatible */
   .site-header .nav-links {
     display: flex !important;
     flex-wrap: nowrap !important;
-    overflow-x: auto !important;
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
     width: 100% !important;
     justify-content: flex-start !important;
     padding: 0.25rem 0 !important;
     gap: 0.5rem !important;
-    scrollbar-width: none; /* Hide scrollbar for clean look */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
   
   .site-header .nav-links::-webkit-scrollbar {
