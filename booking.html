@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book your gaming slot at The Gamer's Hideout – Console & Pool. Select date, time & players. Dombivli gaming café.">
+  <meta name="keywords" content="book gaming slot Dombivli, The Gamer's Hideout booking, gaming café reservation">
+  <meta name="theme-color" content="#0a0a0b">
+  <title>Book a Slot | The Gamer's Hideout – Dombivli</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+    <linearGradient id="card-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff3131;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff0055;stop-opacity:1" />
+    </linearGradient>
+  </svg>
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a href="index.html" class="logo" aria-label="The Gamer's Hideout Home">
+        <img src="assets/logo.png" alt="The Gamer's Hideout">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book Slot</a>
+        <a href="menu.html">Menu</a>
+        <a href="gaming.html">Gaming</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="booking-hero section">
+      <div class="container">
+        <h1 class="font-display">Book Your Slot</h1>
+        <p class="tagline">Pick date, time & gaming type. We'll confirm your slot.</p>
+
+        <form id="booking-form" class="booking-form-wrap">
+          <div class="form-group">
+            <label>Date</label>
+            <div class="date-row">
+              <select id="day" name="day" required>
+                <option value="">Day</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+              </select>
+              <select id="month" name="month" required>
+                <option value="">Month</option>
+                <option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
+              </select>
+              <select id="year" name="year" required>
+                <option value="">Year</option>
+                <option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option>
+              </select>
+            </div>
+          </div>
+          <div id="slot-availability" class="slot-availability" aria-live="polite">
+            <p class="slot-availability-title">Select date above to see available & booked slots</p>
+            <div id="slot-list" class="slot-grid"></div>
+          </div>
+          <div class="form-group">
+            <label for="time">Time</label>
+            <select id="time" name="time" required>
+              <option value="">Select time</option>
+              <option value="09:00">9:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="15:00">3:00 PM</option>
+              <option value="16:00">4:00 PM</option>
+              <option value="17:00">5:00 PM</option>
+              <option value="18:00">6:00 PM</option>
+              <option value="19:00">7:00 PM</option>
+              <option value="20:00">8:00 PM</option>
+              <option value="21:00">9:00 PM</option>
+              <option value="22:00">10:00 PM</option>
+              <option value="23:00">11:00 PM</option>
+              <option value="24:00">12:00 AM</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="players">Number of players</label>
+            <select id="players" name="players" required>
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gaming_type">Gaming type</label>
+            <select id="gaming_type" name="gaming_type" required>
+              <option value="">Select</option>
+              <option value="Console">Console</option>
+              <option value="Pool">Pool</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Booking</button>
+        </form>
+
+        <div id="booking-confirm" class="booking-confirm" aria-live="polite">
+          <h3>Slot booked successfully</h3>
+          <p>Date: <strong data-slot-date>–</strong></p>
+          <p>Time: <strong data-slot-time>–</strong></p>
+          <p>Players: <strong data-slot-players>–</strong></p>
+          <p>Type: <strong data-slot-type>–</strong></p>
+          <p style="margin-top: 1rem;">We'll see you at The Gamer's Hideout.</p>
+          <a id="whatsapp-confirm" href="#" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 1rem;">Confirm via WhatsApp</a>
+          <div class="payment-placeholder">
+            <p><strong>Payment at venue</strong></p>
+            <p>UPI / Razorpay / Cash accepted</p>
+            <div class="payment-options">
+              <span class="btn btn-outline" style="pointer-events: none;">UPI</span>
+              <span class="btn btn-outline" style="pointer-events: none;">Razorpay</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="floating-book" class="floating-book">
+    <a href="booking.html" class="btn btn-primary">Book Now</a>
+  </div>
+
+  <footer class="site-footer">
+    <a href="index.html" class="logo"><img src="assets/logo.png" alt="The Gamer's Hideout"></a>
+    <p>Shop No. 5 & 6, Ground Floor, GNP Arcadia, Opposite Pendharkar College, Dombivli</p>
+    <p>&copy; The Gamer's Hideout. Play. Eat. Chill.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

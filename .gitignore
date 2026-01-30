@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# Optional
+node_modules/
+.env
+.env.local
+
+# One-time push script (contains token – do not commit)
+push-with-token.ps1
